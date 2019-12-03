@@ -1,0 +1,9 @@
+{
+  "name": "gympoint",
+  "version": "1.0.0",
+  "description": "Gympoint - Rocketseat challenge",
+  "main": "index.js",
+  "repository": "https://github.com/KalleoPinheiro/gympoint.git",
+  "author": "Kalleo Pinheiro <kalleopinheiro@hotmail.com>",
+  "license": "MIT"
+}
