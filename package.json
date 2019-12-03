@@ -5,5 +5,47 @@
   "main": "index.js",
   "repository": "https://github.com/KalleoPinheiro/gympoint.git",
   "author": "Kalleo Pinheiro <kalleopinheiro@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "nodemon ./src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "git-cz": "^3.3.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.1",
+    "prettier": "^1.19.1",
+    "sucrase": "^3.10.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint . --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.scss": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/git-cz"
+    }
+  }
 }
